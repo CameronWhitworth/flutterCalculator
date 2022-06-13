@@ -1,6 +1,7 @@
-# firstapp
+# first flutter app
 
 A new Flutter project.
+Basic calculator, completed in the hopes of being used in the future for a currency convertion app
 
 ## Getting Started
 
