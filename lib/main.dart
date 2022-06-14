@@ -27,6 +27,8 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
   String result = "0";
   String expression = "";
   double equationFontSize = 38.0;
+  List<String> items = ['item 1', 'item 2', 'item 3'];
+  String? selectedItem = 'item 1';
 
   buttonPressed(String buttonText) {
     setState(() {
@@ -96,7 +98,41 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
         children: <Widget>[
           Container(
             alignment: Alignment.centerRight,
-            padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+            padding: EdgeInsets.fromLTRB(10, 30, 10, 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Container(
+                  alignment: Alignment.centerLeft,
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  child: SizedBox(
+                    width: 100,
+                    child: DropdownButtonFormField<String>(
+                      value: selectedItem,
+                      items: items
+                          .map((item) => DropdownMenuItem<String>(
+                              value: item,
+                              child:
+                                  Text(item, style: TextStyle(fontSize: 24))))
+                          .toList(),
+                      onChanged: (item) => setState(() => selectedItem = item),
+                    ),
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.centerRight,
+                  //padding: EdgeInsets.fromLTRB(10, 30, 10, 0),
+                  child: Text(
+                    equation,
+                    style: TextStyle(fontSize: equationFontSize),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            alignment: Alignment.centerRight,
+            padding: EdgeInsets.fromLTRB(10, 30, 10, 0),
             child: Text(
               equation,
               style: TextStyle(fontSize: equationFontSize),
