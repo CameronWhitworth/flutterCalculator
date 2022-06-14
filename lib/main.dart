@@ -52,6 +52,7 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
           equation = result;
         } catch (e) {
           result = "Error";
+          equation = "Error";
         }
       } else {
         if (equation == "0") {
@@ -99,14 +100,14 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
               style: TextStyle(fontSize: equationFontSize),
             ),
           ),
-          // Container(
-          //   alignment: Alignment.centerRight,
-          //   padding: EdgeInsets.fromLTRB(10, 30, 10, 0),
-          //   child: Text(
-          //     result,
-          //     style: TextStyle(fontSize: equationFontSize),
-          //   ),
-          // ),
+          Container(
+            alignment: Alignment.centerRight,
+            padding: EdgeInsets.fromLTRB(10, 30, 10, 0),
+            child: Text(
+              result,
+              style: TextStyle(fontSize: equationFontSize),
+            ),
+          ),
           Expanded(
             child: Divider(),
           ),
