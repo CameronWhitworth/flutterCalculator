@@ -11,7 +11,7 @@ class Calculator extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Calculator',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(primarySwatch: Colors.grey),
       home: SimpleCalculator(),
     );
   }
@@ -73,7 +73,9 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(0.0),
               side: BorderSide(
-                  color: Colors.white, width: 1, style: BorderStyle.solid)),
+                  color: Color.fromARGB(255, 0, 0, 0),
+                  width: .1,
+                  style: BorderStyle.solid)),
           padding: EdgeInsets.all(16.0),
           onPressed: () => buttonPressed(buttonText),
           child: Text(
@@ -119,9 +121,9 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
                 child: Table(
                   children: [
                     TableRow(children: [
-                      buildButton("C", 1, Colors.redAccent),
-                      buildButton("⌫", 1, Colors.blue),
-                      buildButton("+", 1, Colors.blue),
+                      buildButton("C", 1, Colors.grey),
+                      buildButton("⌫", 1, Colors.grey),
+                      buildButton("+", 1, Colors.grey),
                     ]),
                     TableRow(children: [
                       buildButton("7", 1, Colors.black54),
@@ -151,19 +153,19 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
                 child: Table(
                   children: [
                     TableRow(children: [
-                      buildButton("÷", 1, Colors.blue),
+                      buildButton("÷", 1, Colors.deepOrange),
                     ]),
                     TableRow(children: [
-                      buildButton("×", 1, Colors.blue),
+                      buildButton("×", 1, Colors.deepOrange),
                     ]),
                     TableRow(children: [
-                      buildButton("-", 1, Colors.blue),
+                      buildButton("-", 1, Colors.deepOrange),
                     ]),
                     TableRow(children: [
-                      buildButton("+", 1, Colors.blue),
+                      buildButton("+", 1, Colors.deepOrange),
                     ]),
                     TableRow(children: [
-                      buildButton("=", 1, Colors.redAccent),
+                      buildButton("=", 1, Colors.deepOrange),
                     ]),
                   ],
                 ),
