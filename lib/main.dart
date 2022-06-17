@@ -130,14 +130,6 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
               ],
             ),
           ),
-          // Container(
-          //   alignment: Alignment.centerRight,
-          //   padding: EdgeInsets.fromLTRB(10, 30, 10, 0),
-          //   child: Text(
-          //     equation,
-          //     style: TextStyle(fontSize: equationFontSize),
-          //   ),
-          // ),
           Container(
             alignment: Alignment.centerRight,
             padding: EdgeInsets.fromLTRB(10, 30, 10, 0),
